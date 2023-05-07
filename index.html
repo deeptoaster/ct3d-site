@@ -13,7 +13,9 @@
   <body>
     <h1>CT3D: Consistent Text-to-3D Generations For Custom Subjects</h1>
     <ul>
-      <li>Ashwin Vaswani</li>
+      <li>
+        <a href="https://bp-gc.in/ashwinvaswani">Ashwin Vaswani</a>
+      </li>
       <li>Aniruddha Mahapatra</li>
       <li>Anujraaj Goyal</li>
       <li>
@@ -44,6 +46,7 @@
     </ul>
 
     <h2>Approach</h2>
+    <img alt="" src="bin/images/pipeline.png" />
     <p>
       Using <a href="https://dreambooth3d.github.io/">DreamBooth3D</a> as a
       baseline, we use implementations of
@@ -78,57 +81,18 @@
         input before the final NeRF is trained.
       </li>
     </ol>
-    <img alt="" src="bin/images/pipeline.png" />
     <h2>Results</h2>
     <table>
       <tr>
-        <th>Naive</th>
+        <th>Input</th>
+        <th>DreamBooth + DreamFusion</th>
         <th>DreamBooth3D</th>
         <th>CT3D</th>
       </tr>
       <tr>
         <td>
-          <img alt="" src="bin/images/bronze_naive.gif" />
+          <img alt="" src="bin/images/marble.png" />
         </td>
-        <td>
-          <img alt="" src="bin/images/bronze_d3d.gif" />
-        </td>
-        <td>
-          <img alt="" src="bin/images/bronze_ours.gif" />
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3">a bronze statue of a sks doll wearing sunglasses</td>
-      </tr>
-      <tr>
-        <td>
-          <img alt="" src="bin/images/leather_naive.gif" />
-        </td>
-        <td>
-          <img alt="" src="bin/images/leather_d3d.gif" />
-        </td>
-        <td>
-          <img alt="" src="bin/images/leather_ours.gif" />
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3">a leather sks bag</td>
-      </tr>
-      <tr>
-        <td>
-          <img alt="" src="bin/images/robot_naive.gif" />
-        </td>
-        <td>
-          <img alt="" src="bin/images/robot_d3d.gif" />
-        </td>
-        <td>
-          <img alt="" src="bin/images/robot_ours.gif" />
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3">a robot sks dog wearing a western hat</td>
-      </tr>
-      <tr>
         <td>
           <img alt="" src="bin/images/marble_naive.gif" />
         </td>
@@ -140,9 +104,60 @@
         </td>
       </tr>
       <tr>
-        <td colspan="3">
+        <td colspan="4">
           a sks cat toy statue made of marble wearing a western hat
         </td>
+      </tr>
+      <tr>
+        <td>
+          <img alt="" src="bin/images/leather.png" />
+        </td>
+        <td>
+          <img alt="" src="bin/images/leather_naive.gif" />
+        </td>
+        <td>
+          <img alt="" src="bin/images/leather_d3d.gif" />
+        </td>
+        <td>
+          <img alt="" src="bin/images/leather_ours.gif" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">a leather sks bag</td>
+      </tr>
+      <tr>
+        <td>
+          <img alt="" src="bin/images/bronze.png" />
+        </td>
+        <td>
+          <img alt="" src="bin/images/bronze_naive.gif" />
+        </td>
+        <td>
+          <img alt="" src="bin/images/bronze_d3d.gif" />
+        </td>
+        <td>
+          <img alt="" src="bin/images/bronze_ours.gif" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">a bronze statue of a sks doll wearing sunglasses</td>
+      </tr>
+      <tr>
+        <td>
+          <img alt="" src="bin/images/robot.png" />
+        </td>
+        <td>
+          <img alt="" src="bin/images/robot_naive.gif" />
+        </td>
+        <td>
+          <img alt="" src="bin/images/robot_d3d.gif" />
+        </td>
+        <td>
+          <img alt="" src="bin/images/robot_ours.gif" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">a robot sks dog wearing a western hat</td>
       </tr>
     </table>
   </body>
