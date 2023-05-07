@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>CT3D</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:800%7CTitillium+Web:400,700"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link href="ct3d.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>CT3D: Consistent Text-to-3D Generations For Custom Subjects</h1>
+    <ul>
+      <li>Ashwin Vaswani</li>
+      <li>Aniruddha Mahapatra</li>
+      <li>Anujraaj Goyal</li>
+      <li>
+        <a href="https://fishbotwilleatyou.com/">Yizhen Yu</a>
+      </li>
+    </ul>
+    <p>
+      Advances in diffusion techniques have yielded impressive results in
+      generating both images and 3D models in a practical and versatile manner.
+      In particular, recent developments include demonstrating networks capable
+      of adapting to custom subjects with only a few images (3&ndash;5) and
+      generating 3D models from text using guidance from pre-trained
+      text-to-image diffusion models. In this paper, we explore a problem at the
+      intersection of the two: how to generate 3D models of custom subjects from
+      just text prompts. We show that using only 3&ndash;5 images of the custom
+      subject, our method can generate good quality 3D models of the custom
+      subjects with text-based edits or object compositions (like making the
+      custom subject made of marble or adding a hat). We also show that our
+      method can generate better 3D models of custom assets in terms of
+      similarity to custom subject images and textual similarity to input
+      prompts, compared to naive baselines and state-of-the-art methods for
+      custom 3D asset generation based on user-provided text prompts.
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/anime26398/CT3D">Code</a>
+      </li>
+    </ul>
+
+    <h2>Approach</h2>
+    <p>
+      Using <a href="https://dreambooth3d.github.io/">DreamBooth3D</a> as a
+      baseline, we use implementations of
+      <a href="https://dreambooth.github.io/">DreamBooth</a> and
+      <a href="https://dreamfusion3d.github.io/">DreamFusion</a> based on the
+      publicly available Stable Diffusion model, rather than Imogen. We then
+      show that three key components can be used to build a more consistent
+      3D-consistent pipeline than either a naive connection or the DreamBooth3D
+      method:
+    </p>
+    <ol>
+      <li>
+        We use
+        <a href="https://zero123.cs.columbia.edu/">Zero 1-to-3</a>, rather than
+        a NeRF guided by a partially-trained DreamBooth model, to create diverse
+        views of the subject as an augmented dataset with better initial view
+        consistency.
+      </li>
+      <li>
+        We use
+        <a href="https://www.timothybrooks.com/instruct-pix2pix/"
+          >InstructPix2Pix</a
+        >
+        to apply texture changes to the augmented dataset.
+      </li>
+      <li>
+        We use
+        <a href="https://yuval-alaluf.github.io/Attend-and-Excite/"
+          >Attend-and-Excite</a
+        >
+        to guide the latent representation more to specified tokens in the text
+        input before the final NeRF is trained.
+      </li>
+    </ol>
+    <img alt="" src="bin/images/pipeline.png" />
+  </body>
+</html>
